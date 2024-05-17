@@ -1,0 +1,244 @@
+/* Normal stil */
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Poller+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Electrolize", sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.navbar {
+  background-color: rgb(0, 0, 0);
+  height: 60px;
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 50px;
+}
+
+.logo {
+  color: rgb(255, 70, 70);
+  font-size: 30px;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  column-gap: 30px;
+  padding: 0;
+}
+
+.menu-list-item {
+  cursor: pointer;
+}
+
+.menu-list-item:hover {
+  font-weight: bold;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.profile-picture {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.sidebar {
+  background-color: black;
+  color: white;
+  height: 100vh;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  row-gap: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.sidebar i {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.content {
+  margin-left: 50px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.content-wrapper {
+  margin-left: 30px;
+}
+
+.featured-content {
+  position: relative;
+  background: url('Netflix original series The OA.jpg') no-repeat top center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.featured-overlay {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.featured-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.featured-buttons {
+  display: flex;
+  column-gap: 20px;
+}
+
+.play-button,
+.info-button {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.play-button i,
+.info-button i {
+  font-size: 24px;
+}
+
+.movie-list-container { 
+    margin-left: 100px;
+}
+
+.movie-list { 
+    list-style: none;
+    padding: 0;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    overflow-x: auto; /* Yatay kaydırma ekler */
+    -webkit-overflow-scrolling: touch; /* iOS için kaydırma düzgünleştirme */
+}
+
+.movie-item { 
+    position:relative;
+}  
+
+.movie-item:hover .movie-item-title,
+.movie-item:hover .movie-item-buttons { 
+    opacity: 1;
+}
+
+.movie-item:hover .movie-item-img { 
+    transform:scale(1.2);
+    margin: 0 30px;
+    opacity: .5;
+}
+
+.movie-item-img { 
+    width: 270px;
+    transition: 1s all ease-in-out;
+}
+
+.movie-item-title { 
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0 10px;
+    font-size: 28px;
+    position: absolute;
+    top:10%;
+    left:50px;
+    transition: 1s all ease-in-out;
+    width: 200px; /* Başlık genişliği */
+    height: 50px; /* Başlık yüksekliği */
+}
+
+.movie-item-buttons { 
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0 10px;
+    font-size: 28px;
+    position: absolute;
+    bottom:10%;
+    left:50px;
+    display: flex;
+    column-gap: 20px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.movie-item-buttons i { 
+    cursor: pointer;
+    opacity: .5;
+    transition: 0.5s all ease;
+}
+
+.movie-item-buttons i:hover { 
+    opacity: 1;
+}
+
+/* Responsive tasarım */
+@media only screen and (max-width: 768px) {
+  .navbar-wrapper {
+    padding: 0 20px; /* Navbar kenar boşluğunu azalt */
+  }
+
+  .content {
+    margin-left: 20px; /* İçerik alanının sol kenar boşluğunu azalt */
+  }
+
+  .movie-list-container { 
+    margin-left: 20px; /* Film listesinin sol kenar boşluğunu azalt */
+  }
+
+  .movie-item-title {
+    font-size: 20px; /* Başlık font boyutunu küçült */
+  }
+}
+
+/* responsive */
+@media only screen and (max-width: 768px) {
+    .slide {
+      width: 50%; /* Tablet ekranları için slayt genişliği ayarı */
+    }
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .slide {
+      width: 100%; /* Mobil ekranlar için slayt genişliği ayarı */
+    }
+  }
